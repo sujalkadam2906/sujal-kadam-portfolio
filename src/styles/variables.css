@@ -1,0 +1,58 @@
+:root {
+  /* ---- Color: "instrument panel" palette ----
+     Paper/graphite base with a brass/signal-amber accent (machined-metal,
+     bearing/gauge reference) and a deep signal-green for the waveform motif
+     (the vibration signal is the literal subject of the flagship project). */
+  --color-bg: #F5F6F3;
+  --color-surface: #FFFFFF;
+  --color-surface-sunken: #EFF1EC;
+  --color-ink: #14181C;
+  --color-ink-soft: #4B5563;
+  --color-ink-faint: #7C8790;
+  --color-line: #DBDED8;
+  --color-line-strong: #C3C8C0;
+
+  --color-accent: #B8862F;       /* brass / machined amber */
+  --color-accent-ink: #7A5A1E;   /* accessible text-on-light variant */
+  --color-signal: #2E7D5B;       /* signal green — waveform / data motif */
+  --color-navy: #1B2A4A;         /* deep structural navy for dark sections */
+  --color-navy-ink: #E8EBF0;
+
+  --color-danger: #9B3B2E;
+
+  /* ---- Type ---- */
+  --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+  --fs-4xl: 3.75rem;
+
+  /* ---- Spacing (8px base scale) ---- */
+  --sp-1: 0.5rem;
+  --sp-2: 0.75rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2rem;
+  --sp-6: 3rem;
+  --sp-7: 4rem;
+  --sp-8: 6rem;
+  --sp-9: 8rem;
+
+  /* ---- Layout ---- */
+  --content-width: 1080px;
+  --content-padding: clamp(1.25rem, 4vw, 3rem);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --shadow-card: 0 1px 2px rgba(20, 24, 28, 0.04), 0 6px 20px rgba(20, 24, 28, 0.05);
+
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}

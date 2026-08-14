@@ -1,0 +1,37 @@
+.education__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-4) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.education__degree {
+  font-size: var(--fs-lg);
+  margin-bottom: 0.2rem;
+}
+
+.education__school {
+  color: var(--color-ink-soft);
+  font-size: var(--fs-sm);
+}
+
+.education__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.education__detail {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-faint);
+}
+
+@media (min-width: 640px) {
+  .education__item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

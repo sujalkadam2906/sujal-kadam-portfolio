@@ -1,0 +1,64 @@
+.certifications__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+}
+
+.cert-card {
+  padding: var(--sp-4);
+}
+
+.cert-card__title {
+  font-size: var(--fs-md);
+  margin-bottom: 0.25rem;
+}
+
+.cert-card__issuer {
+  font-weight: 500;
+  color: var(--color-accent-ink);
+  font-size: var(--fs-sm);
+  margin-bottom: 0.25rem;
+}
+
+.cert-card__date {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+  margin-bottom: var(--sp-2);
+}
+
+.cert-card__detail {
+  font-size: var(--fs-sm);
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+}
+
+.certifications__minor {
+  display: flex;
+  flex-direction: column;
+}
+
+.certifications__minor li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--color-line);
+  font-size: var(--fs-sm);
+}
+
+.certifications__minor-title {
+  color: var(--color-ink);
+}
+
+.certifications__minor-issuer {
+  font-family: var(--font-mono);
+  color: var(--color-ink-faint);
+  font-size: var(--fs-xs);
+}
+
+@media (min-width: 640px) {
+  .certifications__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
