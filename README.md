@@ -78,9 +78,12 @@ corresponding file — no component code needs to change for text edits.
 
 ## Remaining placeholders
 
-See the "Remaining placeholders" list from the build summary — mainly
-GitHub repo links for the three non-featured projects, which weren't
-included in the uploaded materials.
+None left in the visible content. The three non-featured projects
+(Local Skill Exchange Platform, Employee Management System, Notes
+Application) have no verified public repo URL yet, so their GitHub
+button is simply omitted rather than shown as a placeholder — add a
+real URL to `src/data/projects.js` (`links.github`) once each repo is
+public, and the button will appear automatically.
 
 ## Future improvements
 
