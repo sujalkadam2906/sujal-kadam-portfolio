@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import Styleguide from "./pages/Styleguide";
 import NotFound from "./pages/NotFound";
+import SignalIntro from "./components/ui/SignalIntro";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Projects from "./components/Projects/Projects";
@@ -62,6 +63,7 @@ function AppContent() {
 
   return (
     <>
+      <SignalIntro />
       <a href="#main" className="skip-link">
         Skip to main content
       </a>

@@ -7,6 +7,49 @@ import { Github, Linkedin, Mail, ArrowRight, Download } from '../ui/Icons';
 import './Hero.css';
 
 export default function Hero() {
+  const [counts, setCounts] = React.useState({ stat0: 0, stat1: 0, stat2: 0 });
+  const [hasAnimated, setHasAnimated] = React.useState(false);
+
+  React.useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      setCounts({ stat0: 95, stat1: 2, stat2: 1500 });
+      setHasAnimated(true);
+      return;
+    }
+
+    const duration = 1000;
+    const start = performance.now();
+
+    const frame = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // easeOutExpo
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+      setCounts({
+        stat0: Math.round(ease * 95),
+        stat1: Math.round(ease * 2),
+        stat2: Math.round(ease * 1500),
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        setHasAnimated(true);
+      }
+    };
+
+    const anim = requestAnimationFrame(frame);
+    return () => cancelAnimationFrame(anim);
+  }, []);
+
+  const displayStats = [
+    { value: `${counts.stat0}%+`, label: 'SVM Accuracy', detail: 'Signal feature pipeline on bearing vibration data' },
+    { value: `${counts.stat1}`, label: 'Research Papers', detail: 'EPJ Web of Conferences (Published) & Springer (Selected)' },
+    { value: `${counts.stat2.toLocaleString()}+`, label: 'Students Coordinated', detail: 'Chief Placement Officer across 20+ campus drives' },
+  ];
+
   return (
     <section className="hero-section" id="hero">
       <div className="container">
@@ -24,15 +67,16 @@ export default function Hero() {
 
             <p className="hero-summary">{profile.summary}</p>
 
-            {/* Metrics Chips */}
+            {/* Metrics Chips with Count-Up */}
             <div className="hero-stats">
-              {profile.stats.map((stat, idx) => (
+              {displayStats.map((stat, idx) => (
                 <div key={idx} className="stat-card">
                   <span className="stat-value">{stat.value}</span>
                   <span className="stat-label">{stat.label}</span>
                 </div>
               ))}
             </div>
+
 
             {/* CTAs & Socials */}
             <div className="hero-actions">
