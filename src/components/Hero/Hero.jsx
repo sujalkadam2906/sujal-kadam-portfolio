@@ -1,61 +1,93 @@
-import { profile } from "../../data/profile";
-import Waveform from "../Waveform";
-import profileImg from "../../assets/profile.jpg";
-import "./Hero.css";
+import React from 'react';
+import { profile } from '../../data/profile';
+import PhotoBezel from './PhotoBezel';
+import HeroWaveform from './HeroWaveform';
+import Button from '../ui/Button';
+import { Github, Linkedin, Mail, ArrowRight, Download } from '../ui/Icons';
+import './Hero.css';
 
 export default function Hero() {
   return (
-    <section id="top" className="hero">
-      <Waveform className="hero__waveform" />
-      <div className="container hero__inner">
-        <div className="hero__text">
-          <p className="section-eyebrow hero__eyebrow">Software Engineer · Final-Year Engineering Student</p>
-          <h1 className="hero__title">
-            I build with Core Java and DSA,
-            <br />
-            and I've shipped a published ML project.
-          </h1>
-          <p className="hero__subtitle">
-            {profile.summary}
-          </p>
-          <div className="hero__actions">
-            <a href="#projects" className="btn btn-accent">
-              View Projects
-            </a>
-            <a href={profile.resumePath} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              View Resume
-            </a>
-            <a href={profile.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              GitHub
-            </a>
+    <section className="hero-section" id="hero">
+      <div className="container">
+        <div className="hero-grid">
+          {/* Left Column: Copy & CTAs */}
+          <div className="hero-content">
+            <div className="hero-eyebrow">
+              <span className="signal-trace-bullet" aria-hidden="true" />
+              <span>SOFTWARE ENGINEER // B.TECH 2026</span>
+            </div>
+
+            <h1 className="hero-name">{profile.name}</h1>
+
+            <p className="hero-headline">{profile.headline}</p>
+
+            <p className="hero-summary">{profile.summary}</p>
+
+            {/* Metrics Chips */}
+            <div className="hero-stats">
+              {profile.stats.map((stat, idx) => (
+                <div key={idx} className="stat-card">
+                  <span className="stat-value">{stat.value}</span>
+                  <span className="stat-label">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs & Socials */}
+            <div className="hero-actions">
+              <Button as="a" href="#projects" variant="primary" magnetic icon={ArrowRight}>
+                View projects
+              </Button>
+
+              <Button
+                as="a"
+                href="/Sujal_Kadam_Resume.pdf"
+                download="Sujal_Kadam_Resume.pdf"
+                variant="secondary"
+                icon={Download}
+              >
+                Download resume
+              </Button>
+
+              <div className="hero-social-links" aria-label="Social and contact links">
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon-btn"
+                  aria-label="GitHub Profile (opens in new tab)"
+                >
+                  <Github size={18} />
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon-btn"
+                  aria-label="LinkedIn Profile (opens in new tab)"
+                >
+                  <Linkedin size={18} />
+                </a>
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="social-icon-btn"
+                  aria-label="Send email to Sujal Kadam"
+                >
+                  <Mail size={18} />
+                </a>
+              </div>
+            </div>
           </div>
-          <dl className="hero__stats">
-            <div>
-              <dt>SVM accuracy</dt>
-              <dd>95%+</dd>
-            </div>
-            <div>
-              <dt>Research papers</dt>
-              <dd>2 co-authored</dd>
-            </div>
-            <div>
-              <dt>Project award</dt>
-              <dd>Best Mega-Project</dd>
-            </div>
-          </dl>
+
+          {/* Right Column: Instrument Bezel Framed Photo */}
+          <div className="hero-photo-column">
+            <PhotoBezel />
+          </div>
         </div>
 
-        <div className="hero__portrait">
-          <div className="hero__portrait-frame">
-            <img
-              src={profileImg}
-              alt="Portrait of Sujal Kadam"
-              className="hero__portrait-img"
-              width="900"
-              height="961"
-            />
-          </div>
-        </div>
+        {/* Live Interactive Telemetry Waveform */}
+        <HeroWaveform />
       </div>
     </section>
   );

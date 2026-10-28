@@ -1,34 +1,36 @@
-import { skillGroups, currentlyLearning } from "../../data/skills";
-import "./Skills.css";
+import React from 'react';
+import { skillGroups } from '../../data/skills';
+import SectionHeader from '../ui/SectionHeader';
+import Chip from '../ui/Chip';
+import './Skills.css';
 
 export default function Skills() {
   return (
-    <section id="skills" className="section skills">
+    <section className="section" id="skills">
       <div className="container">
-        <div className="section-head">
-          <span className="section-eyebrow">02 · Skills</span>
-          <span className="section-rule" aria-hidden="true" />
-        </div>
+        <SectionHeader
+          number="02"
+          title="Technical Competencies"
+          description="Grouped strictly as verified on my resume: backend Java development, modern frontend engineering, relational schema design, core computer science, and engineering toolchains."
+        />
 
-        <div className="skills__grid">
-          {skillGroups.map((group) => (
-            <div className="skills__group card" key={group.label}>
-              <h3 className="skills__group-label">{group.label}</h3>
-              <ul className="skills__list">
-                {group.items.map((item) => (
-                  <li key={item} className="tag">
+        <div className="skills-grid">
+          {skillGroups.map((group, idx) => (
+            <div key={idx} className="skill-group-card instrument-panel">
+              <div className="skill-group-header">
+                <span className="skill-group-index">0{idx + 1}</span>
+                <h3 className="skill-group-title">{group.label}</h3>
+              </div>
+              <div className="skill-chips-wrap">
+                {group.items.map((item, itemIdx) => (
+                  <Chip key={itemIdx} className="skill-item-chip">
                     {item}
-                  </li>
+                  </Chip>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>
-
-        <p className="skills__learning">
-          <span className="section-eyebrow">Currently learning</span>{" "}
-          {currentlyLearning.join(" · ")}
-        </p>
       </div>
     </section>
   );

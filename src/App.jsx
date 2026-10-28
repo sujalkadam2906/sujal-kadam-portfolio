@@ -1,31 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import Styleguide from "./pages/Styleguide";
+import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import About from "./components/About/About";
-import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
+import Skills from "./components/Skills/Skills";
 import Research from "./components/Research/Research";
-import Experience from "./components/Experience/Experience";
-import Education from "./components/Education/Education";
 import Certifications from "./components/Certifications/Certifications";
-import Achievements from "./components/Achievements/Achievements";
+import About from "./components/About/About";
 import ResumeCTA from "./components/ResumeCTA/ResumeCTA";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import { SHOW_EXPERIENCE } from "./data/experience";
+import { SHOW_EXPERIENCE, experience } from "./data/experience";
+import Experience from "./components/Experience/Experience";
 
 function AppContent() {
-  const [isStyleguide, setIsStyleguide] = useState(false);
+  const [currentRoute, setCurrentRoute] = useState("home");
 
   useEffect(() => {
     const checkRoute = () => {
-      setIsStyleguide(
-        window.location.pathname === "/styleguide" ||
-        window.location.hash === "#styleguide"
-      );
+      const pathname = window.location.pathname;
+      const hash = window.location.hash;
+
+      if (pathname === "/styleguide" || hash === "#styleguide") {
+        setCurrentRoute("styleguide");
+      } else if (
+        pathname !== "/" &&
+        pathname !== "" &&
+        pathname !== "/index.html" &&
+        !pathname.startsWith("/#") &&
+        !pathname.startsWith("/certificates") &&
+        !pathname.startsWith("/images") &&
+        !pathname.startsWith("/projects") &&
+        !pathname.startsWith("/research") &&
+        !pathname.endsWith(".pdf")
+      ) {
+        // Unknown route
+        setCurrentRoute("404");
+      } else {
+        setCurrentRoute("home");
+      }
     };
+
     checkRoute();
     window.addEventListener("hashchange", checkRoute);
     window.addEventListener("popstate", checkRoute);
@@ -35,8 +52,12 @@ function AppContent() {
     };
   }, []);
 
-  if (isStyleguide) {
+  if (currentRoute === "styleguide") {
     return <Styleguide />;
+  }
+
+  if (currentRoute === "404") {
+    return <NotFound />;
   }
 
   return (
@@ -46,15 +67,14 @@ function AppContent() {
       </a>
       <Navbar />
       <main id="main">
+        {/* Section order per brief Section 4 */}
         <Hero />
-        <About />
-        <Skills />
         <Projects />
+        <Skills />
         <Research />
-        {SHOW_EXPERIENCE && <Experience />}
-        <Education />
         <Certifications />
-        <Achievements />
+        <About />
+        {SHOW_EXPERIENCE && <Experience />}
         <ResumeCTA />
         <Contact />
       </main>

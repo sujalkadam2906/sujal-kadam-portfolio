@@ -1,0 +1,127 @@
+.hero-waveform-container {
+  width: 100%;
+  margin-top: var(--sp-6);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.waveform-telemetry-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.telemetry-readouts {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.telemetry-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.telemetry-item .label {
+  color: var(--text-faint);
+}
+
+.telemetry-item .val {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.telemetry-item.status-badge {
+  padding-left: 8px;
+  border-left: 1px solid var(--line);
+}
+
+.status-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.status-indicator.healthy {
+  background-color: #2E7D5B;
+  box-shadow: 0 0 6px rgba(46, 125, 91, 0.5);
+}
+
+.status-indicator.fault {
+  background-color: var(--signal-red);
+  box-shadow: 0 0 8px var(--signal-red-glow);
+  animation: pulse-ring 1s infinite;
+}
+
+.inject-fault-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  transition: all var(--duration-fast);
+  cursor: pointer;
+}
+
+.inject-fault-btn:hover {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.inject-fault-btn.active {
+  background: var(--signal-red-subtle);
+  border-color: var(--signal-red);
+  color: var(--signal-red-text);
+}
+
+.btn-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--text-faint);
+  transition: background-color var(--duration-fast);
+}
+
+.inject-fault-btn.active .btn-indicator {
+  background-color: var(--signal-red);
+}
+
+.canvas-wrapper {
+  height: 110px;
+  width: 100%;
+  position: relative;
+}
+
+.waveform-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .waveform-telemetry-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .canvas-wrapper {
+    height: 80px;
+  }
+}
