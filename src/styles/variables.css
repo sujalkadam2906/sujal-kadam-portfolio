@@ -1,58 +1,127 @@
+/* Signal Design System CSS Custom Properties */
+
 :root {
-  /* ---- Color: "instrument panel" palette ----
-     Paper/graphite base with a brass/signal-amber accent (machined-metal,
-     bearing/gauge reference) and a deep signal-green for the waveform motif
-     (the vibration signal is the literal subject of the flagship project). */
-  --color-bg: #F5F6F3;
-  --color-surface: #FFFFFF;
-  --color-surface-sunken: #EFF1EC;
-  --color-ink: #14181C;
-  --color-ink-soft: #4B5563;
-  --color-ink-faint: #7C8790;
-  --color-line: #DBDED8;
-  --color-line-strong: #C3C8C0;
+  /* ========================================================
+     THEME: Signal (Dark, Default)
+     Charcoal grey + moonlit silver + calibrated signal red
+     ======================================================== */
+  --bg: #121316;
+  --surface: #1A1C20;
+  --surface-raised: #23262B;
+  --surface-overlay: rgba(26, 28, 32, 0.92);
+  --line: #30343A;
+  --line-strong: #40464E;
 
-  --color-accent: #B8862F;       /* brass / machined amber */
-  --color-accent-ink: #7A5A1E;   /* accessible text-on-light variant */
-  --color-signal: #2E7D5B;       /* signal green — waveform / data motif */
-  --color-navy: #1B2A4A;         /* deep structural navy for dark sections */
-  --color-navy-ink: #E8EBF0;
+  /* Typography Colors */
+  --text: #DCE1E8;          /* Moonlit silver */
+  --text-muted: #98A1AD;    /* Secondary text */
+  --text-faint: #67717E;    /* Captions, border labels */
 
-  --color-danger: #9B3B2E;
+  /* Signal Red Accents */
+  --signal-red: #D92622;         /* Calibrated fill: passes 4.94:1 AA with white */
+  --signal-red-text: #FF5A4F;    /* Accessible high-contrast red link/text on dark */
+  --signal-red-glow: rgba(217, 38, 34, 0.22);
+  --signal-red-subtle: rgba(217, 38, 34, 0.12);
 
-  /* ---- Type ---- */
-  --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
-  --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+  /* CTA Semantics */
+  --cta-bg: var(--signal-red);
+  --cta-text: #FFFFFF;
+  --cta-hover: #BF1E1A;
 
-  --fs-xs: 0.75rem;
-  --fs-sm: 0.875rem;
-  --fs-base: 1rem;
-  --fs-md: 1.125rem;
-  --fs-lg: 1.375rem;
-  --fs-xl: 1.75rem;
-  --fs-2xl: 2.25rem;
-  --fs-3xl: 3rem;
-  --fs-4xl: 3.75rem;
+  /* Theme Indicator */
+  --theme-name: "Signal";
 
-  /* ---- Spacing (8px base scale) ---- */
-  --sp-1: 0.5rem;
-  --sp-2: 0.75rem;
-  --sp-3: 1rem;
-  --sp-4: 1.5rem;
-  --sp-5: 2rem;
-  --sp-6: 3rem;
-  --sp-7: 4rem;
-  --sp-8: 6rem;
-  --sp-9: 8rem;
+  /* ========================================================
+     TYPOGRAPHY TOKENS
+     Self-hosted via @fontsource
+     ======================================================== */
+  --font-display: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", Menlo, Consolas, monospace;
 
-  /* ---- Layout ---- */
-  --content-width: 1080px;
-  --content-padding: clamp(1.25rem, 4vw, 3rem);
+  /* Fluid type scale (clamp-based) */
+  --fs-xs: clamp(0.72rem, 0.7rem + 0.15vw, 0.8rem);
+  --fs-sm: clamp(0.84rem, 0.8rem + 0.2vw, 0.92rem);
+  --fs-base: clamp(0.96rem, 0.92rem + 0.25vw, 1.05rem);
+  --fs-md: clamp(1.1rem, 1.04rem + 0.35vw, 1.25rem);
+  --fs-lg: clamp(1.28rem, 1.18rem + 0.6vw, 1.55rem);
+  --fs-xl: clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+  --fs-2xl: clamp(2rem, 1.7rem + 1.6vw, 2.85rem);
+  --fs-3xl: clamp(2.5rem, 2rem + 2.6vw, 3.8rem);
+  --fs-hero: clamp(2.8rem, 2.2rem + 3.8vw, 4.6rem);
+
+  /* Spacing Scale (8px rhythm) */
+  --sp-1: 0.25rem;  /* 4px */
+  --sp-2: 0.5rem;   /* 8px */
+  --sp-3: 0.75rem;  /* 12px */
+  --sp-4: 1rem;     /* 16px */
+  --sp-5: 1.5rem;   /* 24px */
+  --sp-6: 2rem;     /* 32px */
+  --sp-7: 3rem;     /* 48px */
+  --sp-8: 4rem;     /* 64px */
+  --sp-9: 6rem;     /* 96px */
+
+  /* Layout */
+  --content-width: 1140px;
+  --content-padding: clamp(1.25rem, 4.5vw, 3.5rem);
+  --radius-xs: 2px;
   --radius-sm: 4px;
   --radius-md: 8px;
+  --radius-lg: 12px;
 
-  --shadow-card: 0 1px 2px rgba(20, 24, 28, 0.04), 0 6px 20px rgba(20, 24, 28, 0.05);
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
 
-  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Motion Tokens */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 240ms;
+  --duration-enter: 450ms;
+
+  /* Focus ring */
+  --focus-ring: 2px solid var(--signal-red-text);
+  --focus-offset: 3px;
+}
+
+/* ========================================================
+   THEME: Daylight (Light)
+   Ice silver + deep aubergine + rich marigold
+   ======================================================== */
+[data-theme="light"] {
+  --bg: #EEF1F5;
+  --surface: #FFFFFF;
+  --surface-raised: #F7F9FB;
+  --surface-overlay: rgba(255, 255, 255, 0.94);
+  --line: #D5DAE1;
+  --line-strong: #BDC4CE;
+
+  /* Typography Colors */
+  --text: #2A1030;          /* Deep aubergine */
+  --text-muted: #5E5468;    /* Muted aubergine */
+  --text-faint: #837B8C;    /* Captions */
+
+  /* Daylight Accents */
+  --signal-red: #D92622;
+  --signal-red-text: #C5221F;
+  --signal-red-glow: rgba(217, 38, 34, 0.16);
+  --signal-red-subtle: rgba(217, 38, 34, 0.08);
+
+  --accent-marigold: #F2A900;
+  --accent-marigold-hover: #D99500;
+
+  /* CTA Semantics: Marigold fill with aubergine text */
+  --cta-bg: var(--accent-marigold);
+  --cta-text: #2A1030;
+  --cta-hover: var(--accent-marigold-hover);
+
+  --theme-name: "Daylight";
+
+  --shadow-sm: 0 1px 3px rgba(42, 16, 48, 0.06);
+  --shadow-md: 0 6px 18px rgba(42, 16, 48, 0.08);
+  --shadow-lg: 0 14px 36px rgba(42, 16, 48, 0.12);
+
+  --focus-ring: 2px solid #2A1030;
 }
