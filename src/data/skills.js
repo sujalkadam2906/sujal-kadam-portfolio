@@ -1,53 +1,77 @@
-// Source of truth: SUJAL KADAM-resume.pdf, Technical Skills section
+// Source of truth: Sujal_Kadam_Resume.pdf (Technical Skills section)
 export const skillGroups = [
   {
     label: "Languages",
-    items: ["Java (Advanced)", "SQL", "JavaScript", "Python (Basic)"],
+    items: [
+      "Java (Core Java, Java 8)",
+      "SQL",
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "Python (Basic)",
+    ],
   },
   {
-    label: "Backend",
+    label: "Backend & Java",
     items: [
-      "Object-Oriented Design",
-      "CRUD Operations",
+      "Spring Boot (CRUD REST APIs)",
+      "Spring MVC",
+      "Spring Data JPA",
+      "Hibernate",
+      "Collections",
       "Exception Handling",
-      "File Handling",
-      "Modular Architecture",
     ],
   },
   {
     label: "Frontend",
-    items: ["HTML5", "CSS3", "React.js (component design, state management)"],
-  },
-  {
-    label: "Databases",
-    items: ["SQL", "DBMS (relational modeling, query design)"],
-  },
-  {
-    label: "Core CS",
     items: [
-      "Data Structures & Algorithms",
-      "Operating Systems",
-      "Computer Networks",
-      "Software Engineering / SDLC",
-      "Collections Framework",
-      "Multithreading",
+      "React 18",
+      "HTML5",
+      "CSS3 (CSS Modules)",
+      "Vite",
+      "IndexedDB",
+      "localStorage",
+      "DOM Manipulation",
     ],
   },
   {
-    label: "Data / ML",
+    label: "Databases & SQL",
     items: [
-      "Data Cleaning",
-      "Feature Engineering",
-      "Model Training",
-      "Classification (SVM)",
+      "PostgreSQL",
+      "MySQL",
+      "Relational Schema Design",
+      "Primary/Foreign Keys",
+      "Joins",
+      "Aggregations",
+      "GROUP BY",
+    ],
+  },
+  {
+    label: "Core CS & ML",
+    items: [
+      "DSA",
+      "OOP",
+      "DBMS",
+      "OS",
+      "Computer Networks",
+      "SDLC",
       "Pandas",
       "NumPy",
+      "scikit-learn",
     ],
   },
   {
-    label: "Tools",
-    items: ["Git", "GitHub", "Version Control"],
+    label: "Testing & Tools",
+    items: [
+      "Git",
+      "GitHub",
+      "Maven",
+      "JUnit 5",
+      "Vitest",
+      "React Testing Library",
+      "CLI AI Agents (Claude Code, GitHub Copilot)",
+    ],
   },
 ];
 
-export const currentlyLearning = ["Spring Boot", "REST APIs", "JUnit"];
+export const currentlyLearning = [];
+

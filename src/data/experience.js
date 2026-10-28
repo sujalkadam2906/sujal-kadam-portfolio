@@ -1,6 +1,11 @@
-// Sources: SUJAL KADAM-resume.pdf (Experience section), "Internship Report - AC.docx"
+// Note: The updated resume does not list this internship.
+// Setting visible: false hides the section from navigation and main layout,
+// while keeping all verified historical data preserved.
+export const SHOW_EXPERIENCE = false;
+
 export const experience = [
   {
+    visible: SHOW_EXPERIENCE,
     company: "Aqua Chill Systems India Pvt. Ltd.",
     role: "Project Engineer Intern",
     duration: "Jan 2026 – Jun 2026",
