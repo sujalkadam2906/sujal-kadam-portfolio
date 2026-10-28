@@ -67,7 +67,7 @@ export default function Navbar() {
 
         <div className="container navbar-inner">
           {/* Brand Monogram */}
-          <a href="#hero" className="navbar-brand" aria-label="Sujal Kadam Home">
+          <a href="#hero" className="navbar-brand" aria-label="SUJAL KADAM / SIGNAL - Home">
             <span className="brand-dot" aria-hidden="true" />
             <span className="brand-text">SUJAL KADAM</span>
             <span className="brand-sub">/ SIGNAL</span>
@@ -96,7 +96,7 @@ export default function Navbar() {
               className="navbar-tool-btn search-trigger-btn"
               onClick={() => setPaletteOpen(true)}
               title="Command Palette (Ctrl+K)"
-              aria-label="Open command palette"
+              aria-label="Ctrl K - Open command palette"
             >
               <Search size={15} />
               <span className="search-key-hint">Ctrl K</span>

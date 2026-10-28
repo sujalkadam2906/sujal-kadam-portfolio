@@ -34,7 +34,9 @@ export function ThemeProvider({ children }) {
       const nextTheme = theme === 'dark' ? 'light' : 'dark';
 
       // Check for View Transitions API support and reduced motion
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia
+        ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        : false;
 
       if (!document.startViewTransition || prefersReducedMotion) {
         setTheme(nextTheme);

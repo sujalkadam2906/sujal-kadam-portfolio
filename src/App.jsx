@@ -13,7 +13,7 @@ import About from "./components/About/About";
 import ResumeCTA from "./components/ResumeCTA/ResumeCTA";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import { SHOW_EXPERIENCE, experience } from "./data/experience";
+import { SHOW_EXPERIENCE } from "./data/experience";
 import Experience from "./components/Experience/Experience";
 
 function AppContent() {

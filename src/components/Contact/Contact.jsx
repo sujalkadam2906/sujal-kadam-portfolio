@@ -95,7 +95,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="external-open-btn"
-              aria-label="Open LinkedIn profile in new tab"
+              aria-label="Visit LinkedIn profile (opens in new tab)"
             >
               <ExternalLink size={16} />
               <span>Visit</span>
@@ -124,7 +124,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="external-open-btn"
-              aria-label="Open GitHub profile in new tab"
+              aria-label="Visit GitHub repositories (opens in new tab)"
             >
               <ExternalLink size={16} />
               <span>Visit</span>

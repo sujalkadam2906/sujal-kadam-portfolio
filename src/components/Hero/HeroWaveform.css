@@ -24,15 +24,19 @@
 .telemetry-readouts {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
+  min-width: 0;
 }
 
 .telemetry-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  white-space: normal;
+  word-break: break-word;
 }
+
 
 .telemetry-item .label {
   color: var(--text-faint);

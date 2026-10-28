@@ -1,8 +1,9 @@
 .photo-bezel-wrapper {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: min(100%, 380px);
   margin: 0 auto;
+  box-sizing: border-box;
   padding: 14px 14px 10px 24px;
   background: var(--surface);
   border: 1px solid var(--line-strong);
@@ -141,7 +142,8 @@
 
 @media (max-width: 768px) {
   .photo-bezel-wrapper {
-    max-width: 300px;
+    max-width: min(100%, 300px);
     padding: 10px 10px 8px 18px;
   }
 }
+

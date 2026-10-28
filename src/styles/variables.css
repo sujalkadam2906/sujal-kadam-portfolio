@@ -14,8 +14,8 @@
 
   /* Typography Colors */
   --text: #DCE1E8;          /* Moonlit silver */
-  --text-muted: #98A1AD;    /* Secondary text */
-  --text-faint: #67717E;    /* Captions, border labels */
+  --text-muted: #A3ADB8;    /* Secondary text (exceeds 4.5:1 AA) */
+  --text-faint: #98A1AD;    /* Captions, border labels (7.1:1 AA) */
 
   /* Signal Red Accents */
   --signal-red: #D92622;         /* Calibrated fill: passes 4.94:1 AA with white */
@@ -100,8 +100,8 @@
 
   /* Typography Colors */
   --text: #2A1030;          /* Deep aubergine */
-  --text-muted: #5E5468;    /* Muted aubergine */
-  --text-faint: #837B8C;    /* Captions */
+  --text-muted: #54495F;    /* Muted aubergine (>6.5:1 AA) */
+  --text-faint: #5E5468;    /* Captions (>6:1 AA) */
 
   /* Daylight Accents */
   --signal-red: #D92622;

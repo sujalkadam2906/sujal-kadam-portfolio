@@ -1,6 +1,6 @@
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: var(--sp-5);
 }
 
@@ -8,6 +8,7 @@
   padding: 20px 20px 22px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
   border-radius: var(--radius-sm);
   transition: border-color var(--duration-fast), transform var(--duration-fast);
 }
@@ -50,7 +51,11 @@
   font-size: 0.78rem;
   padding: 4px 10px;
   background: var(--surface-raised);
+  white-space: normal;
+  word-break: break-word;
+  max-width: 100%;
 }
+
 
 @media (max-width: 640px) {
   .skills-grid {

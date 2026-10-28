@@ -2,7 +2,7 @@ import React from 'react';
 import { profile } from '../../data/profile';
 import { education } from '../../data/education';
 import SectionHeader from '../ui/SectionHeader';
-import { MapPin, Award } from '../ui/Icons';
+import { MapPin } from '../ui/Icons';
 import './About.css';
 
 export default function About() {

@@ -3,7 +3,7 @@ import { certificates, certificateCategories } from '../../data/certifications';
 import SectionHeader from '../ui/SectionHeader';
 import Chip from '../ui/Chip';
 import CertificateLightbox from './CertificateLightbox';
-import { ExternalLink, Download, FileText, Award } from '../ui/Icons';
+import { ExternalLink, Download } from '../ui/Icons';
 import './Certifications.css';
 
 export default function Certifications() {

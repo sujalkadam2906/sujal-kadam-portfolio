@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 export default function Button({
   as: Component = 'button',
   variant = 'secondary',
-  size = 'md',
+  size: _size = 'md',
   magnetic = false,
   className = '',
   children,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, X, Sun, Moon, Download, ExternalLink, Mail, ArrowRight } from './Icons';
+import { Search, X, ArrowRight } from './Icons';
 import { useTheme } from '../../context/ThemeContext';
 import { profile } from '../../data/profile';
 import { projects } from '../../data/projects';

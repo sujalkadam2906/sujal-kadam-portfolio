@@ -8,13 +8,11 @@ import './Hero.css';
 
 export default function Hero() {
   const [counts, setCounts] = React.useState({ stat0: 0, stat1: 0, stat2: 0 });
-  const [hasAnimated, setHasAnimated] = React.useState(false);
 
   React.useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
       setCounts({ stat0: 95, stat1: 2, stat2: 1500 });
-      setHasAnimated(true);
       return;
     }
 
@@ -35,10 +33,9 @@ export default function Hero() {
 
       if (progress < 1) {
         requestAnimationFrame(frame);
-      } else {
-        setHasAnimated(true);
       }
     };
+
 
     const anim = requestAnimationFrame(frame);
     return () => cancelAnimationFrame(anim);

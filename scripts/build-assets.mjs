@@ -184,7 +184,7 @@ async function run() {
       fs.copyFileSync(srcPath, path.join(SOURCE_ASSETS_DIR, origDestName));
     }
 
-    let renderedPng = null;
+    let renderedPng;
 
     if (cert.isImage) {
       // It's a JPEG image masquerading as PNG

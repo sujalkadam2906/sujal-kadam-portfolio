@@ -9,7 +9,6 @@ import {
   Sun,
   Moon,
   FileText,
-  Activity,
   ArrowRight,
 } from '../components/ui/Icons';
 

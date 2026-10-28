@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight, Download, ExternalLink, FileText } from '../ui/Icons';
-import Button from '../ui/Button';
 import './Certifications.css';
 
 export default function CertificateLightbox({

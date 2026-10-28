@@ -1,10 +1,10 @@
 import React from 'react';
-import { publications, SHOW_TFGET_PDF } from '../../data/research';
+import { publications } from '../../data/research';
 import { achievements } from '../../data/achievements';
 import SectionHeader from '../ui/SectionHeader';
 import Chip from '../ui/Chip';
 import Button from '../ui/Button';
-import { FileText, ExternalLink, Download, Award } from '../ui/Icons';
+import { ExternalLink, Download, Award } from '../ui/Icons';
 import './Research.css';
 
 export default function Research() {
@@ -117,7 +117,7 @@ export default function Research() {
                   <a
                     href="#certificates"
                     className="award-cert-link"
-                    aria-label={`View certificate for ${item.title}`}
+                    aria-label={`View Official Award Certificate for ${item.title}`}
                   >
                     View Official Award Certificate →
                   </a>
